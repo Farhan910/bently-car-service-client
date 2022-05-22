@@ -1,0 +1,55 @@
+[
+    {
+        "name": "V8 Engines",
+        "price":200,
+        "description" :"",
+        "image": "https://i.ibb.co/sH5jRzH/engine0.jpg",
+        "minimum":40,
+        "stock":100
+    },
+    {
+        "name": "Ultra Engines",
+        "price":600,
+        "description" :"",
+        "image": "https://i.ibb.co/sH5jRzH/engine0.jpg",
+        "minimum":40,
+        "stock":100
+    },
+    {
+        "name": "Small Engines",
+        "price":750,
+        "description" :"",
+        "image": "https://i.ibb.co/tXFJLNB/Engine4.jpg",
+        "minimum":40,
+        "stock":100
+    },
+    {
+        "name": "Fog lIghts",
+        "price":400,
+        "description" :"",
+        "image": "https://i.ibb.co/rcwTcqg/foglight.jpg",
+        "minimum":40,
+        "stock":100
+    },
+    {
+        "name": "Compressors",
+        "price":350,
+        "description" :"",
+        "image": "https://i.ibb.co/163fFy9/pressure.jpg",
+        "minimum":40,
+        "stock":100
+    },
+    {
+        "name": "Wheels",
+        "price":150,
+        "description" :"",
+        "image": "https://i.ibb.co/HDLTgnx/wheel.jpg",
+        "minimum":40,
+        "stock":100
+    }
+
+
+
+
+]
+
