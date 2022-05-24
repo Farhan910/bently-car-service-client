@@ -1,0 +1,46 @@
+[
+
+
+    {
+        "name":"Forbidden smith",
+        "img":"https://i.ibb.co/kxYMnhG/reviewer3.jpg",
+        "country":"USA",
+        "reviews":"It was a very small inconvenience but I understand that for people who aren't internet savvy, it's important to give them easy instructions! Your customer service ROCKS! Thank you again for the nice gesture and the prompt response!",
+        "star":"4.5" 
+    },
+    {
+        "name":"Syxllye Xennon",
+        "img":"https://i.ibb.co/nfxn92H/reviwer1.jpg",
+        "country":"UK",
+        "reviews":"It was a very small inconvenience but I understand that for people who aren't internet savvy, it's important to give them easy instructions! Your customer service ROCKS! Thank you again for the nice gesture and the prompt response!",
+        "star":"4.0" 
+    },
+    {
+        "name":"Easton Roabert",
+         "img":"https://i.ibb.co/tKjZg4k/reviwer2.jpg",
+        "country":"Bangladesh",
+        "reviews":"It was a very small inconvenience but I understand that for people who aren't internet savvy, it's important to give them easy instructions! Your customer service ROCKS! Thank you again for the nice gesture and the prompt response!",
+        "star":"3.9" 
+    },
+    {
+        "name":"Forbidden smith",
+        "img":"https://i.ibb.co/kxYMnhG/reviewer3.jpg",
+        "country":"USA",
+        "reviews":"It was a very small inconvenience but I understand that for people who aren't internet savvy, it's important to give them easy instructions! Your customer service ROCKS! Thank you again for the nice gesture and the prompt response!",
+        "star":"4.5" 
+    },
+    {
+        "name":"Syxllye Xennon",
+        "img":"https://i.ibb.co/nfxn92H/reviwer1.jpg",
+        "country":"UK",
+        "reviews":"It was a very small inconvenience but I understand that for people who aren't internet savvy, it's important to give them easy instructions! Your customer service ROCKS! Thank you again for the nice gesture and the prompt response!",
+        "star":"4.0" 
+    },
+    {
+        "name":"Easton Roabert",
+         "img":"https://i.ibb.co/tKjZg4k/reviwer2.jpg",
+        "country":"Bangladesh",
+        "reviews":"It was a very small inconvenience but I understand that for people who aren't internet savvy, it's important to give them easy instructions! Your customer service ROCKS! Thank you again for the nice gesture and the prompt response!",
+        "star":"3.9" 
+    }
+]

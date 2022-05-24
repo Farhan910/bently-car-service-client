@@ -1,14 +1,12 @@
-import React, { useEffect, useState } from "react";
-import Banner from "./Banner";
-import Business from "./Business";
-import Products from "./Products";
-import Review from "./Reviews/Review";
-import ReviewCard from "./Reviews/ReviewCard";
-import Footer from "./Shared/Footer";
+import React, { useEffect, useState } from 'react';
+import ReviewCard from './ReviewCard';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+AOS.init();
 
 
-const Home = () => {
-  const [reviews,setReviews] = useState([0]);
+const Review = () => {
+    const [reviews,setReviews] = useState([0]);
 
     useEffect(() =>{
         fetch('http://localhost:5000/review')
@@ -19,26 +17,20 @@ const Home = () => {
         })
 
     },[])
-  return (
-    <div>
-      <Banner/>
-      <Products/>
-      <Business/>
-      <div className="mt-[200px] p-12" >
+    return (
+        <div className="mt-[200px] p-12" >
             <h2 className="text-3xl text-center mb-28 underline">Reviews</h2>
 
             <div className="grid lg:grid-cols-3 grid-cols-1 md:grid-cols-2 gap-12" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
             {
-                reviews.slice(0,3).map(review => <ReviewCard 
+                reviews.map(review => <ReviewCard 
                 key={review.id}
                 review={review}
                 ></ReviewCard>)
             }
             </div>
         </div>
-      <Footer/>
-    </div>
-  );
+    );
 };
 
-export default Home;
+export default Review;
