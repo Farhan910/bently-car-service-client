@@ -21,6 +21,7 @@ import Payment from "./Components/Pages/Dashboard/Payment";
 import OrderTable from "./Components/Pages/Dashboard/OrderTable";
 import PaymentSystem from "./Components/Pages/Dashboard/PaymentSystem";
 import Users from "./Components/Pages/Dashboard/Users";
+import NotFound from "./Components/Pages/NotFound";
 
 function App() {
   return (
@@ -85,6 +86,7 @@ function App() {
           }
         />
         <Route path="signUp" element={<SignUp />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );

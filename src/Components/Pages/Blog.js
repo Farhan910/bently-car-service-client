@@ -1,8 +1,11 @@
 import React from "react";
+import Footer from "./Shared/Footer";
 
 const Blog = () => {
   return (
-    <div className="grid lg:grid-cols-2 grid-cols-1 text-center p-5">
+    <div >
+      <h2 className="text-center text-3xl text-white underline mt-5">Questions and Answers</h2>
+     <div className="grid lg:grid-cols-2 grid-cols-1 text-center p-5 mt-[100px] gap-10">
      <div >
      <h2 className="text-2xl text-white">
      How will you improve the performance of a React Application?
@@ -35,7 +38,25 @@ const Blog = () => {
       <h2> Prototypal Inheritance হল জাভাস্ক্রিপ্টের একটি বৈশিষ্ট্য যা মুলত Mathod এবং Property অবজেক্টে যোগ করতে ব্যবহৃত হয়। এটি এমন একটি পদ্ধতি যার মাধ্যমে একটি অবজেক্ট তার Mathod ও Property এর সাথে অন্য একটি অব্জেক্টের inherit করে </h2>
      </div>
 
-     
+     <div>
+      <h2 className="text-2xl text-white mt-5">Why you do not set the state directly in React. For example, if you have const [products, setProducts] = useState([]). Why you do not set products = [...] instead, you use the setProducts</h2>
+      <h2>নিম্নলিখিত কারণগুলির কারণে একজনের কখনই সরাসরি স্টেট আপডেট করা উচিত নয়: যদি এটি সরাসরি আপডেট করা হয় , তাহলে setState() কে পরে কল করলে করা আপডেটটি বদলে যেতে পারে।  যখন স্টেট কে  সরাসরি আপডেট করা হয় , তখন এটি পরিবর্তন তাকে করে না,এবং এটির উপর থেকে কন্ট্রল হারিয়ে যেতে পারে এবং ভুল তথ্য দিতে পারে ।</h2>
+     </div>
+
+     <div>
+      <h2 className="text-2xl text-white mt-5">You have an array of products. Each product has a name, price, description, etc. How will you implement a search to find products by name?</h2>
+      <h2>Quary selector by name দিয়ে তা খুজা যেতে পারে</h2>
+     </div>
+     <div>
+      <h2 className="text-2xl text-white mt-5">What is a unit test? Why should write unit tests?</h2>
+
+    <h2>unit test এটা হলো একটি স্বয়ংক্রিয় টেস্ট যা মুলত সফট ওওার ডেভেলপার রা পরিচালনা করে যাতে তার মাধ্যমে চেক করা যায় যে এপ্লিকেশন বা ওই সেকশন টা ইউনিট নামক একটা জিনিসের ডিজাইন কে নিচ্ছে কিনা ।</h2>
+     </div>
+     </div>
+
+     <div className="mt-[100px]">
+     <Footer />
+     </div>
     </div>
   );
 };

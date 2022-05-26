@@ -45,7 +45,15 @@ const PurchaseDetail = () => {
         "Please fill in all the fields or maybe you have a purchase !!!",
         "error"
       );
-    } else {
+      
+    }
+    else if(quantity > purchase.stock){
+      swal("Oops!", "You can't buy more than what you have in stock", "error");
+      return;
+    }
+
+    
+     else {
       fetch(` http://localhost:5000/purchase/${id}`, {
         method: "PUT",
         headers: {
