@@ -13,11 +13,14 @@ import Dashboard from "./Components/Pages/Dashboard/Dashboard";
 import MyProfile from "./Components/Pages/Dashboard/MyProfile";
 import MyReview from "./Components/Pages/Dashboard/MyReview";
 import MyOrder from "./Components/Pages/Dashboard/MyOrder";
-import MyDashboard from "./Components/Pages/Dashboard/MyDashboard";
 import AddProduct from "./Components/Pages/Dashboard/AddProduct";
-import MakeAdmin from "./Components/Pages/Dashboard/MakeAdmin";
 import ManageOrder from "./Components/Pages/Dashboard/ManageOrder";
 import ManageProduct from "./Components/Pages/Dashboard/ManageProduct";
+import AddAReview from "./Components/Pages/Dashboard/AddAReview";
+import Payment from "./Components/Pages/Dashboard/Payment";
+import OrderTable from "./Components/Pages/Dashboard/OrderTable";
+import PaymentSystem from "./Components/Pages/Dashboard/PaymentSystem";
+import Users from "./Components/Pages/Dashboard/Users";
 
 function App() {
   return (
@@ -28,6 +31,8 @@ function App() {
         <Route path="about" element={<About />} />
         <Route path="portfolio" element={<Portfolio />} />
         <Route path="blog" element={<Blog />} />
+        <Route path="payment/:id" element={<Payment></Payment>} />
+        
         <Route
           path="/purchaseDetail/:id"
           element={
@@ -36,6 +41,16 @@ function App() {
             </RequireAuth>
           }
         />
+        <Route
+          path="/purchase/:id"
+          element={
+            <RequireAuth>
+              <PurchaseDetail />
+            </RequireAuth>
+          }
+        />
+        
+       
         <Route
           path="dashboard"
           element={
@@ -48,8 +63,13 @@ function App() {
           <Route path="review" element={<MyReview></MyReview>} />
           <Route path="order" element={<MyOrder></MyOrder>} />
           <Route path="addProduct" element={<AddProduct></AddProduct>} />
-          <Route path="makeAdmin" element={<MakeAdmin></MakeAdmin>} />
+          <Route path="paymentSystem/:id" element={<PaymentSystem></PaymentSystem>} />
           <Route path="manageOrder" element={<ManageOrder></ManageOrder>} />
+          <Route path="addReview" element={<AddAReview></AddAReview>} />
+          <Route path="orderTable" element={<OrderTable></OrderTable>} />
+          <Route path="allUser" element={<Users></Users>} />
+          
+          
           <Route
             path="manageProduct"
             element={<ManageProduct></ManageProduct>}

@@ -1,7 +1,7 @@
 import React from "react";
 import { useQuery } from "react-query";
 import Loading from "../Shared/Loading";
-import MakeAdmin from "./MakeAdmin";
+import UserRow from "./UserRow";
 
 const Users = () => {
   const {
@@ -9,7 +9,7 @@ const Users = () => {
     isLoading,
     refetch,
   } = useQuery("users", () =>
-    fetch("http://localhost:5000/user", {
+    fetch(" http://localhost:5000/user", {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -22,19 +22,17 @@ const Users = () => {
   return (
     <div>
       <h2 className="text-2xl">All Users: {users.length}</h2>
-      <div className="overflow-x-auto">
-        <table className="table w-full">
+      <div class="overflow-x-auto">
+        <table class="table w-full">
           <thead>
             <tr>
               <th></th>
-              <th>Name</th>
-              <th>Job</th>
-              <th>Favorite Color</th>
+              <th>User Name</th>
             </tr>
           </thead>
           <tbody>
             {users.map((user) => (
-              <MakeAdmin key={user._id} user={user} refetch={refetch}></MakeAdmin>
+              <UserRow key={user._id} user={user} refetch={refetch}></UserRow>
             ))}
           </tbody>
         </table>

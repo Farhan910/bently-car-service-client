@@ -1,32 +1,62 @@
-import React from "react";
+import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { useQuery } from "react-query";
+import { useParams } from "react-router-dom";
+import swal from "sweetalert";
 import auth from "../../../firebase.init";
+import useAdmin from "../Hooks/useAdmin";
 
-const ManageProductCard = ({ product }) => {
-  const { name, price, stock } = product;
+const ManageProductCard = ({ product, index }) => {
+  const { name, price, quantity, _id } = product;
+  const [user] = useAuthState(auth);
+  const [admin] = useAdmin(user);
+
+  console.log(_id);
+  const { isLoading, refetch } = useQuery();
+  const handleDelete = (e) => {
+    e.preventDefault();
+    if (admin) {
+      fetch(` http://localhost:5000/product/${_id}`, {
+        method: "DELETE",
+        headers: {
+          "content-type": "application/json",
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log("successfully", data);
+        });
+      swal({
+        title: "Are you sure?",
+        text: "Once deleted, you will not be able to recover this imaginary file!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      }).then((willDelete) => {
+        if (willDelete) {
+          swal("Poof! Your imaginary file has been deleted!", {
+            icon: "success",
+          });
+        } else {
+          swal("Your imaginary file is safe!");
+        }
+      });
+      refetch();
+    }
+  };
   return (
     <div>
-      <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
-        <table className="w-[900px] text-sm text-left text-gray-500 dark:text-gray-400">
+      <div class="overflow-x-auto">
+        <table class="table w-full">
           <tbody>
-            <tr className="bg-white border-b  dark:bg-gray-800 dark:border-gray-700">
-              <th
-                scope="row"
-                className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap"
-              >
-                {name}
-              </th>
-              <td className="px-6 py-4">{price}</td>
-              <td className="px-6 py-4">{stock}</td>
-
-              <td className="px-6 py-4 text-right">
-                <a
-                  href="#"
-                  className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                >
-                  Edit
-                </a>
-              </td>
+            <tr>
+              <th>{index + 1}</th>
+              <td>{name}</td>
+              <td>{price}</td>
+              <td>{quantity}</td>
+              <button onClick={handleDelete} class="btn btn-xs mt-4">
+                Delete
+              </button>
             </tr>
           </tbody>
         </table>

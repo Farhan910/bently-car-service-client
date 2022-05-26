@@ -7,7 +7,7 @@ const ManageProduct = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/product/`)
+    fetch(` http://localhost:5000/product/`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -16,29 +16,24 @@ const ManageProduct = () => {
   }, []);
   return (
     <div>
-      <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-        <tr>
-          <th scope="col" className="px-6 py-3">
-            Product name
-          </th>
-          <th scope="col" className="px-6 py-3">
-            Price
-          </th>
-          <th scope="col" className="px-6 py-3">
-            Stock
-          </th>
-          <th scope="col" className="px-6 py-3">
-            Owner
-          </th>
-          <th scope="col" className="px-6 py-3">
-            <span className="sr-only">Edit</span>
-          </th>
-        </tr>
-      </thead>
+      <>
+        <table class="table w-full">
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Name</th>
+              <th>Price</th>
+              <th> Quantity</th>
+            </tr>
+          </thead>
+        </table>
+      </>
+
       {products.map((product) => (
         <ManageProductCard
           key={product._id}
           product={product}
+          index={products.indexOf(product)}
         ></ManageProductCard>
       ))}
     </div>

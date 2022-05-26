@@ -4,43 +4,41 @@ import { useForm } from "react-hook-form";
 import auth from "../../../firebase.init";
 import swal from "sweetalert";
 
-const AddProduct = () => {
+const AddAReviw = () => {
   const [user] = useAuthState(auth);
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const product = {
+    const review = {
+      reviews: e.target.reviews?.value,
       name: e.target.name?.value,
-      price: e.target.price?.value,
-      image: e.target.image?.value,
-      minimum: e.target.minimum?.value,
-      stock: e.target.stock?.value,
-      email: user?.email,
+      country: e.target.country?.value,
+      star: e.target.star?.value,
+      img: e.target.img?.value,
     };
 
     if (
-      product.name &&
-      product.price &&
-      product.image &&
-      product.minimum &&
-      product.stock
+      review.reviews &&
+      review.star &&
+      review.name &&
+      review.country &&
+      review.img
     ) {
-      fetch(" http://localhost:5000/product/", {
+      fetch(" http://localhost:5000/review/", {
         method: "POST",
         headers: {
           "content-type": "application/json",
         },
-        body: JSON.stringify(product),
+        body: JSON.stringify(review),
       })
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
         });
 
-      swal("Your product successfully added!", "success");
+      swal("Review Added Successfully", "", "success");
     }
-
-    swal("Please", "Fill up all of input!", "error");
+    swal("Please fill all the fields", "", "error");
 
     e.target.reset();
   };
@@ -49,40 +47,36 @@ const AddProduct = () => {
   return (
     <div className="my-5 flex items-center justify-center">
       <div className="card w-96 h-[550px] bg-base-300 shadow-xl  ">
-        <h2 className="text-2xl text-center mt-4">Add Items</h2>
+        <h2 className="text-2xl text-center mt-4">Add A Review</h2>
         <div className="card-body">
           <form className="my-5 " onSubmit={handleSubmit}>
             <input
-              className="input my-2 "
-              {...register("name", { required: true, maxLength: 20 })}
+              className="input my-2"
+              {...register("name", { required: true })}
+              type="text"
               placeholder="Name"
             />
             <input
-              className="input my-2"
-              {...register("minimum", { required: true })}
-              type="number"
-              placeholder="Minimum "
+              className="input my-2 "
+              {...register("reviews", { required: true })}
+              placeholder="Description"
             />
             <input
               className="input my-2"
-              {...register("stock", { required: true })}
-              type="number"
-              placeholder="Stock"
+              {...register("country", { required: true })}
+              type="text"
+              placeholder="Country"
             />
             <input
               className="input my-2"
-              {...register("email", { required: true })}
-              placeholder="email"
-            />
-            <input
-              className="input my-2"
-              {...register("price", { required: true })}
               type="number"
-              placeholder="Price"
+              {...register("star", { required: true })}
+              placeholder="Ratings"
             />
+
             <input
               className="input my-2 "
-              {...register("image", { required: true })}
+              {...register("img", { required: true })}
               type="text"
               placeholder="Image"
             />
@@ -95,4 +89,4 @@ const AddProduct = () => {
   );
 };
 
-export default AddProduct;
+export default AddAReviw;

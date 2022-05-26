@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   useSignInWithGoogle,
   useSignInWithEmailAndPassword,
@@ -10,7 +10,7 @@ import useToken from "./Hooks/useToken";
 import Loading from "./Shared/Loading";
 
 const Login = () => {
-  const [token] = useToken();
+  
   const [signInWithGoogle, googleUser, googleLoading, googleError] =
     useSignInWithGoogle(auth);
   const [signInWithEmailAndPassword, user, loading, error] =
@@ -18,6 +18,9 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
   let from = location.state?.from?.pathname || "/";
+
+  const [token] = useToken(user || googleUser);
+  
 
   if (token) {
     navigate("/");
@@ -31,9 +34,11 @@ const Login = () => {
     handleSubmit,
   } = useForm();
 
-  if (user || googleUser) {
-    navigate(from, { replace: true });
-  }
+  useEffect( () =>{
+    if (token) {
+        navigate(from, { replace: true });
+    }
+}, [token, from, navigate])
   if (error || googleError) {
     signInError = (
       <p className="text-red-500">
