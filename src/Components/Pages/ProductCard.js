@@ -17,7 +17,7 @@ const ProductCard = ({ product }) => {
             <div className="badge badge-secondary text-white">New</div>
           </h2>
 
-          <p>If a dog chews shoes whose shoes does he choose?</p>
+          
           <p>Minimum purchase : {minimum} Pieces</p>
           <p>Available Now : {stock} Pieces</p>
           <p>Price : $ {price}</p>
