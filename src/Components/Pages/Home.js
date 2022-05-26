@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import AboutOur from "./AboutOur";
+import Address from "./Address";
 import Banner from "./Banner";
 import Business from "./Business";
 import ProductCard from "./ProductCard";
@@ -54,6 +56,8 @@ const Home = () => {
           ))}
         </div>
       </div>
+      <Address/>
+      <AboutOur/>
       <Footer />
     </div>
   );
