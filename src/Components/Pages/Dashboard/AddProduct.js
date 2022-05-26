@@ -35,12 +35,12 @@ const AddProduct = () => {
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
+          swal("Your product successfully added!", "success");
         });
 
-      swal("Your product successfully added!", "success");
     }
 
-    swal("Please", "Fill up all of input!", "error");
+    
 
     e.target.reset();
   };
