@@ -90,10 +90,16 @@ const Navbar = () => {
                 {user ? <Link to="dashboard">Dashboard</Link> : null}
               </li>
               <li>
+                {user && <h2>{user.displayName}</h2>}
+              </li>
+
+              <li>
                 {user ? (
+                  
                   <button onClick={logout} className="btn btn-ghost">
                     Sign Out
                   </button>
+                  
                 ) : (
                   <Link to="/login">Login</Link>
                 )}

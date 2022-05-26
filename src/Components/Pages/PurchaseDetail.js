@@ -52,6 +52,12 @@ const PurchaseDetail = () => {
       return;
     }
 
+    else if(quantity < purchase.minimum){
+    
+      swal("Oops!", "You can't buy less than the minimum quantity", "error");
+      return;
+    }
+
     
      else {
       fetch(` http://localhost:5000/purchase/${id}`, {
