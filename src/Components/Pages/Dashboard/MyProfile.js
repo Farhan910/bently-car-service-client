@@ -3,6 +3,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import auth from "../../../firebase.init";
 import { useQuery } from "react-query";
+import swal from "sweetalert";
 
 const MyProfile = (e) => {
   const [user] = useAuthState(auth);
@@ -39,7 +40,7 @@ const MyProfile = (e) => {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
+          
         });
 
       e.target.reset();
@@ -61,7 +62,7 @@ const MyProfile = (e) => {
 
   return (
     <div className="flex justify-center items-center">
-      <div className="m-5">
+      <div className="m-5 grid lg:grid-cols-2 grid-cols-1">
         <div class="card w-96 bg-base-300 shadow-xl">
           <div class="card-body">
             <h2 class="card-title"> Name : {profile?.name}</h2>
@@ -71,7 +72,7 @@ const MyProfile = (e) => {
           </div>
         </div>
       </div>
-      <div className="card w-96 bg-base-300 shadow-xl">
+      <div className="card w-96 bg-base-300 shadow-xl grid grid-cols-1 ">
         <div className="card-body">
           <h2 className="card-title">{user.displayName}</h2>
           <p>{user.email}</p>
