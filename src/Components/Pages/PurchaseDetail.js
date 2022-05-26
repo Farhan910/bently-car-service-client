@@ -8,7 +8,6 @@ const PurchaseDetail = () => {
   const [user] = useAuthState(auth);
   const [purchase, setPurchase] = useState({});
   const { id } = useParams();
-  
 
   const navigate = useNavigate();
   // const productDetail = purchase?.find((product) => product.id === id);
@@ -21,18 +20,18 @@ const PurchaseDetail = () => {
       quantity: e.target.quantity?.value,
       phone: e.target.phone?.value,
       price: e.target.productPrice?.value,
-      email:user?.email
+      email: user?.email,
     };
 
     const name = purchases.name;
     const productName = purchases.productName;
-    const quantity = parseInt(purchases.quantity) > 0 ? parseInt(purchases.quantity) : 0;
+    const quantity =
+      parseInt(purchases.quantity) > 0 ? parseInt(purchases.quantity) : 0;
     const phone = purchases.phone;
     const price = parseInt(purchases.price) * parseInt(purchases.quantity);
     const email = purchases.email;
-    const total = { name, productName, quantity, phone, price,email };
+    const total = { name, productName, quantity, phone, price, email };
 
-    
     if (
       name === "" ||
       productName === "" ||
@@ -45,22 +44,14 @@ const PurchaseDetail = () => {
         "Please fill in all the fields or maybe you have a purchase !!!",
         "error"
       );
-      
-    }
-    else if(quantity > purchase.stock){
+    } else if (quantity > purchase.stock) {
       swal("Oops!", "You can't buy more than what you have in stock", "error");
       return;
-    }
-
-    else if(quantity < purchase.minimum){
-    
+    } else if (quantity < purchase.minimum) {
       swal("Oops!", "You can't buy less than the minimum quantity", "error");
       return;
-    }
-
-    
-     else {
-      fetch(` http://localhost:5000/purchase/${id}`, {
+    } else {
+      fetch(` https://hidden-dawn-20976.herokuapp.com/purchase/${id}`, {
         method: "PUT",
         headers: {
           "content-type": "application/json",
@@ -82,12 +73,12 @@ const PurchaseDetail = () => {
   };
 
   useEffect(() => {
-    fetch(` http://localhost:5000/product/${id}`,{
+    fetch(` https://hidden-dawn-20976.herokuapp.com/product/${id}`, {
       method: "GET",
       headers: {
         "content-type": "application/json",
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-      }
+      },
     })
       .then((res) => res.json())
       .then((data) => {

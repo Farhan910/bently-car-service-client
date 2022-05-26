@@ -16,7 +16,7 @@ const ManageProductCard = ({ product, index }) => {
   const handleDelete = (e) => {
     e.preventDefault();
     if (admin) {
-      fetch(` http://localhost:5000/product/${_id}`, {
+      fetch(` https://hidden-dawn-20976.herokuapp.com/product/${_id}`, {
         method: "DELETE",
         headers: {
           "content-type": "application/json",

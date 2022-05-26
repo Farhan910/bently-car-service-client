@@ -11,12 +11,12 @@ const Payment = () => {
   const [products, setProducts] = useState({});
 
   useEffect(() => {
-    fetch(` http://localhost:5000/purchase/${id}`,{
+    fetch(` https://hidden-dawn-20976.herokuapp.com/purchase/${id}`, {
       method: "GET",
       headers: {
         "content-type": "application/json",
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-      }
+      },
     })
       .then((res) => res.json())
       .then((data) => {

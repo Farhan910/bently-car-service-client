@@ -1,14 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 
 import auth from "../../../firebase.init";
+import MyOrderCard from "./MyOrderCard";
 
 const MyOrder = () => {
-  const [user] = useAuthState(auth);
-  const email = user?.email;
-  
-console.log(email);
-  fetch(` http://localhost:5000/purchase/${email}`, {
+  const [orders, setOrders] = useState();
+
+  fetch(` https://hidden-dawn-20976.herokuapp.com/purchase/`, {
     method: "GET",
     headers: {
       "content-type": "application/json",
@@ -18,10 +17,13 @@ console.log(email);
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
+      setOrders(data);
     });
   return (
     <div>
-      <h2>this is order page</h2>
+      {orders?.map((product) => (
+        <MyOrderCard key={product._id} product={product}></MyOrderCard>
+      ))}
     </div>
   );
 };

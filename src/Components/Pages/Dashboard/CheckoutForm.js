@@ -17,7 +17,7 @@ const CheckoutForm = ({ product }) => {
   const { price, productName, name, _id } = product;
 
   useEffect(() => {
-    fetch(" http://localhost:5000/create-payment-intent", {
+    fetch(" https://hidden-dawn-20976.herokuapp.com/create-payment-intent", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -78,11 +78,11 @@ const CheckoutForm = ({ product }) => {
         product: _id,
         transactionId: paymentIntent.id,
       };
-      fetch(` http://localhost:5000/purchase/${_id}`, {
+      fetch(` https://hidden-dawn-20976.herokuapp.com/purchase/${_id}`, {
         method: "PATCH",
         headers: {
           "content-type": "application/json",
-            authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
         },
         body: JSON.stringify(payment),
       })

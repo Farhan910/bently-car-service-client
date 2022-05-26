@@ -5,14 +5,14 @@ const MyReview = () => {
   const [reviews, setReviews] = useState([0]);
 
   useEffect(() => {
-    fetch(" http://localhost:5000/review")
+    fetch(" https://hidden-dawn-20976.herokuapp.com/review")
       .then((res) => res.json())
       .then((data) => {
         setReviews(data);
       });
   }, []);
   return (
-    <div className="mt-[200px] p-12">
+    <div className=" p-12">
       <h2 className="text-3xl text-center mb-28 underline">Reviews</h2>
 
       <div

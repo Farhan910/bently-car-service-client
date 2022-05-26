@@ -4,14 +4,12 @@ import { useForm } from "react-hook-form";
 import auth from "../../../firebase.init";
 import { useQuery } from "react-query";
 
-
 const MyProfile = (e) => {
   const [user] = useAuthState(auth);
 
   const { isLoading, refetch } = useQuery();
 
   const email = user?.email;
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -31,7 +29,7 @@ const MyProfile = (e) => {
       users.phone &&
       users.city
     ) {
-      fetch(` http://localhost:5000/profile/${email}`, {
+      fetch(` https://hidden-dawn-20976.herokuapp.com/profile/${email}`, {
         method: "PUT",
         headers: {
           "content-type": "application/json",
@@ -55,17 +53,11 @@ const MyProfile = (e) => {
   //   return <Loading/>
   // }
 
-  
-    fetch(` http://localhost:5000/profile/${email}`)
-      .then((res) => res.json())
-      .then((data) => {
-        
-        setProfile(data);
-      });
-  
-
-  
-  
+  fetch(` https://hidden-dawn-20976.herokuapp.com/profile/${email}`)
+    .then((res) => res.json())
+    .then((data) => {
+      setProfile(data);
+    });
 
   return (
     <div className="flex justify-center items-center">

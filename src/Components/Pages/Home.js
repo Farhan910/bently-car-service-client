@@ -14,14 +14,14 @@ const Home = () => {
   const [products, setProducts] = useState([0]);
 
   useEffect(() => {
-    fetch(" http://localhost:5000/review")
+    fetch(" https://hidden-dawn-20976.herokuapp.com/review")
       .then((res) => res.json())
       .then((data) => {
         setReviews(data);
       });
   }, []);
   useEffect(() => {
-    fetch(" http://localhost:5000/product")
+    fetch(" https://hidden-dawn-20976.herokuapp.com/product")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
@@ -56,8 +56,8 @@ const Home = () => {
           ))}
         </div>
       </div>
-      <Address/>
-      <AboutOur/>
+      <Address />
+      <AboutOur />
       <Footer />
     </div>
   );
