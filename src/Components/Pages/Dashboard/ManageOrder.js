@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import useAdmin from "../Hooks/useAdmin";
+
 import OrderTable from "./OrderTable";
 
 const ManageOrder = () => {

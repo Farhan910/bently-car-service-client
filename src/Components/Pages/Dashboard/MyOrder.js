@@ -1,6 +1,6 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { useQuery } from "react-query";
+
 import auth from "../../../firebase.init";
 
 const MyOrder = () => {

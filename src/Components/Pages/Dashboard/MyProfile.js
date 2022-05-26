@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import auth from "../../../firebase.init";
 import { useQuery } from "react-query";
-import Loading from "../Shared/Loading";
+
 
 const MyProfile = (e) => {
   const [user] = useAuthState(auth);
