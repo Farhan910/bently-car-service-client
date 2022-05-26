@@ -10,7 +10,6 @@ const MyReview = () => {
       .then((data) => {
         setReviews(data);
       });
-      
   }, []);
   return (
     <div className=" p-12">
