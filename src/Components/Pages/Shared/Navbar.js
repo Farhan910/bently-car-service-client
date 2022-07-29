@@ -14,7 +14,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="navbar bg-base-100 flex justify-between">
+      <div className="navbar bg-base-100  flex justify-between">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabindex="0" className="btn btn-ghost lg:hidden">
@@ -38,20 +38,18 @@ const Navbar = () => {
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 "
             >
               <>
-                <li className="text-white">
+                <li className="text-black">
                   <Link to="/">Home</Link>
                 </li>
-                <li className="text-white">
-                  <Link to="about">About</Link>
-                </li>
-                <li className="text-white">
+                
+                <li className="text-black">
                   <Link to="portfolio">Portfolio</Link>
                 </li>
-                <li className="text-white">
+                <li className="text-black">
                   <Link to="blog">Blog</Link>
                 </li>
 
-                <li className="text-white">
+                <li className="text-black">
                   {user && <Link to="dashboard">Dashboard</Link>}
                 </li>
                 <li>
@@ -66,27 +64,25 @@ const Navbar = () => {
               </>
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl text-white px-12">
+          <a className="btn btn-ghost normal-case text-xl  px-12">
             Bentley
           </a>
         </div>
         <div className="navbar-center hidden lg:flex ">
           <ul className="menu menu-horizontal p-0 px-12">
             <>
-              <li className="text-white">
+              <li className="text-black">
                 <Link to="/">Home</Link>
               </li>
-              <li className="text-white">
-                <Link to="about">About</Link>
-              </li>
-              <li className="text-white">
+             
+              <li className="text-black">
                 <Link to="portfolio">Portfolio</Link>
               </li>
-              <li className="text-white">
+              <li className="text-black">
                 <Link to="blog">Blog</Link>
               </li>
 
-              <li className="text-white">
+              <li className="text-black">
                 {user ? <Link to="dashboard">Dashboard</Link> : null}
               </li>
               <li>

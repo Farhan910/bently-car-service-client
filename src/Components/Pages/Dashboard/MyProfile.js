@@ -63,7 +63,7 @@ const MyProfile = (e) => {
   return (
     <div className="flex justify-center items-center">
       <div className="m-5 grid lg:grid-cols-2 grid-cols-1">
-        <div class="card w-96 bg-base-300 shadow-xl">
+        <div class="card w-96 bg-base-100 shadow-xl">
           <div class="card-body">
             <h2 class="card-title"> Name : {profile?.name}</h2>
             <p>Education : {profile?.education}</p>
@@ -72,7 +72,7 @@ const MyProfile = (e) => {
           </div>
         </div>
       </div>
-      <div className="card w-96 bg-base-300 shadow-xl grid grid-cols-1 ">
+      <div className="card w-96 bg-base-200  shadow-xl grid grid-cols-1 ">
         <div className="card-body">
           <h2 className="card-title">{user.displayName}</h2>
           <p>{user.email}</p>
@@ -102,7 +102,7 @@ const MyProfile = (e) => {
             />
 
             <br />
-            <input className="input mx-auto " type="submit" value="Submit" />
+            <input className="input mx-auto cursor-pointer " type="submit" value="Submit" />
           </form>
         </div>
       </div>

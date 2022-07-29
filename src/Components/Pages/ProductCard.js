@@ -7,14 +7,14 @@ const ProductCard = ({ product }) => {
   const { name, image, minimum, stock, _id, price } = product;
   return (
     <div>
-      <div className="card w-96 bg-base-200 shadow-xl">
+      <div className="card w-96  shadow-xl">
         <figure>
           <img src={image} alt="Shoes" className="w-full" />
         </figure>
-        <div className="card-body text-white">
+        <div className="card-body ">
           <h2 className="card-title">
             {name}
-            <div className="badge badge-secondary text-white">New</div>
+            <div className="badge badge-secondary ">New</div>
           </h2>
 
           
@@ -25,8 +25,9 @@ const ProductCard = ({ product }) => {
           <button
             onClick={() => navigate(`/purchaseDetail/${_id}`)}
             type="button"
-            className="btn btn-secondary text-white"
+            className="btn btn-outline btn-secondary "
           >
+            
             Purchase
           </button>
         </div>

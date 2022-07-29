@@ -7,7 +7,7 @@ import MyOrderCard from "./MyOrderCard";
 const MyOrder = () => {
   const [orders, setOrders] = useState();
 
-  fetch(` https://hidden-dawn-20976.herokuapp.com/purchase/`, {
+  fetch(``, {
     method: "GET",
     headers: {
       "content-type": "application/json",

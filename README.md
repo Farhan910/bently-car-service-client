@@ -1,6 +1,10 @@
 
 # Bentley car service
-[This project's live link is - ](https://bentley-car-manufactuters.web.app/).
+[This project's live link is - ](https://bentley-car-manufactuters.web.app/)
+
+# Admin email address
+email:farhanfaruk221@gmail.com
+Password : 123456
 
 
 # DEscription 

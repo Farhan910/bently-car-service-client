@@ -8,7 +8,7 @@ import CountUp from "react-countup";
 
 const Business = () => {
   return (
-    <div className="p-12  mt-[170px]">
+    <div className="px-12  mt-[170px]">
         <h2 className="text-3xl text-center mb-28 underline">Our Business Summary</h2>
       <div className="grid lg:grid-cols-4 grid-cols-1   md:grid-cols-2 ">
       <div>

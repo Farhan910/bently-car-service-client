@@ -1,9 +1,12 @@
 import React from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+AOS.init();
 
 const Address = () => {
   return (
     <div className=" my-[100px] grid grid-cols-1 gap-5 lg:grid-cols-3 md:grid-cols-2 p-12">
-      <div class="  card lg:mx-w-lg bg-base-300 shadow-xl">
+      <div class="  card lg:mx-w-lg  shadow-xl" data-aos="fade-down-right">
         <div class="card-body">
           <h2 class="text-2xl text-white text-center underline mb-2 ">Bangladesh shop</h2>
           <p>
@@ -14,15 +17,15 @@ const Address = () => {
           <div class="card-actions justify-end"></div>
         </div>
       </div>
-      <div class="card lg:mx-w-lg bg-base-300 shadow-xl">
+      <div class="card lg:mx-w-lg  shadow-xl" data-aos="fade-up">
         <div class="card-body">
           <h2 class="text-2xl text-white text-center underline mb-2">USA shop</h2>
           <p>4 Corners Distribution L.T.D. Unit 3B Katella Trading Estate 10A River Road, Barking, Essex IG11 ODG , Essex United Kingdom England</p>
           <div class="card-actions justify-end"></div>
         </div>
       </div>
-      <div class="card lg:mx-w-lg bg-base-300 shadow-xl">
-        <div class="card-body">
+      <div class="card lg:mx-w-lg   shadow-xl" data-aos="fade-down-left">
+        <div class="card-body" >
           <h2 class="text-2xl text-white text-center underline mb-2">England shop</h2>
           <p>
             Sales Head Office, P.O. Box 13754, Dubai, United Arab Emirates Call

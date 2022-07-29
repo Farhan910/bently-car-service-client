@@ -5,7 +5,7 @@ import Footer from "./Shared/Footer";
 const Portfolio = () => {
   return (
     <div>
-        <div class="hero min-h-screen bg-base-200">
+        <div class="hero min-h-screen ">
       <div class="hero-content flex-col lg:flex-row">
         <img
           src={image}

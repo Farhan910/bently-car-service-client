@@ -4,8 +4,6 @@ import Address from "./Address";
 import Banner from "./Banner";
 import Business from "./Business";
 import ProductCard from "./ProductCard";
-import Products from "./Products";
-import Review from "./Reviews/Review";
 import ReviewCard from "./Reviews/ReviewCard";
 import Footer from "./Shared/Footer";
 
@@ -31,7 +29,7 @@ const Home = () => {
     <div>
       <Banner />
       <div className="mt-[200px] p-12">
-        <h2 className="text-3xl text-center mb-28 underline">Our Products</h2>
+        <h2 className="text-3xl text-center  mb-28 underline">Our Products</h2>
         <div
           className="grid lg:grid-cols-3 grid-cols-1 md:grid-cols-2 gap-12"
           data-aos="fade-up"

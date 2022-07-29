@@ -3,11 +3,11 @@ import image from '../Images//download (1).png'
 
 const AboutOur = () => {
   return (
-    <div class="hero h-screen bg-base-300 mt-[100px]">
+    <div class="hero h-screen  mt-[300px]">
       <div class="hero-content flex-col lg:flex-row">
         <img
           src={image}
-          class="max-w-sm w-full rounded-lg mt-[-500px] shadow-2xl"
+          class="max-w-sm w-full rounded-lg mt-[-500px] "
         alt=""/>
         <div class="mt-[-400px]">
           <h1 class="text-5xl font-bold">Our Best PowerFull Engine!</h1>

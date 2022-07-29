@@ -46,7 +46,7 @@ const AddAReviw = () => {
   const { register } = useForm();
   return (
     <div className="my-5 flex items-center justify-center">
-      <div className="card w-96 h-[550px] bg-base-300 shadow-xl  ">
+      <div className="card w-96 h-[550px] bg-base-200 shadow-xl  ">
         <h2 className="text-2xl text-center mt-4">Add A Review</h2>
         <div className="card-body">
           <form className="my-5 " onSubmit={handleSubmit}>
@@ -81,7 +81,7 @@ const AddAReviw = () => {
               placeholder="Image"
             />
             <br />
-            <input className="input mx-auto " type="submit" value="Submit" />
+            <input className="input mx-auto cursor-pointer " type="submit" value="Submit" />
           </form>
         </div>
       </div>

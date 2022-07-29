@@ -88,7 +88,7 @@ const PurchaseDetail = () => {
 
   return (
     <div className="flex justify-center mt-[100px]">
-      <div className="card w-96  bg-base-300 shadow-xl">
+      <div className="card w-96   shadow-xl">
         <div className="card-body">
           <img src={purchase.image} alt="" />
 
