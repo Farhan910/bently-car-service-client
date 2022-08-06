@@ -87,7 +87,7 @@ const AddProduct = () => {
               placeholder="Image"
             />
             <br />
-            <input className="input mx-auto " type="submit" value="Submit" />
+            <button><input className="input mx-auto btn btn-outline " type="submit" value="Submit" /></button>
           </form>
         </div>
       </div>

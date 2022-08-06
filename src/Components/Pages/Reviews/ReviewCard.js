@@ -8,7 +8,7 @@ const ReviewCard = ({ review }) => {
   console.log(review);
   return (
     <div>
-      <div data-aos="fade-up" className="card w-96 bg-base-100 shadow-2xl ">
+      <div data-aos="fade-up" className="card w-96  shadow-xl ">
         <div className="card-body">
           <p>{reviews}</p>
           <div className="relative flex ">
